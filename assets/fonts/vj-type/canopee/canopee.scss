@@ -1,0 +1,46 @@
+.is-liga {
+  font-feature-settings: "liga" 1,"dlig" 1,"hlig" 1,"clig" 1
+}
+
+.is-onum {
+  font-feature-settings: "onum"
+}
+
+.is-alt-ss01 {
+  font-feature-settings: "ss01"
+}
+
+.is-alt-ss02 {
+  font-feature-settings: "ss02"
+}
+
+.is-alt-ss03 {
+  font-feature-settings: "ss03"
+}
+
+.is-alt-ss04 {
+  font-feature-settings: "ss04"
+}
+
+.is-alt-liga-ss01 {
+  font-feature-settings: "ss01","liga" 1,"dlig" 1,"hlig" 1,"clig" 1
+}
+
+.is-alt-liga-ss02 {
+  font-feature-settings: "ss02","liga" 1,"dlig" 1,"hlig" 1,"clig" 1
+}
+
+.is-alt-liga-ss03 {
+  font-feature-settings: "ss03","liga" 1,"dlig" 1,"hlig" 1,"clig" 1
+}
+
+.is-alt-liga-ss04 {
+  font-feature-settings: "ss04","liga" 1,"dlig" 1,"hlig" 1,"clig" 1
+}
+
+@font-face {
+  font-family: 'Canopee';
+  font-weight: 400;
+  src: url("30_61764_canopee-regular.woff") format("woff");
+  font-display: swap;
+}
