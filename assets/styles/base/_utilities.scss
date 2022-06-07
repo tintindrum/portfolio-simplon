@@ -7,7 +7,8 @@
     --bs-light: rgb(239, 238, 231); //
     //--mashco-dark: #242021;
     --quentin-dark: rgb(36,32,33); //
-   
+    --border-radius-global: 1.4rem;
+
     
     --quentin-charte-terreclair: #d6cdbb; //
     --quentin-light-like: #ff7eb4;
@@ -37,6 +38,11 @@
 .bg-charte-terre {
     background-color: var(--quentin-charte-terreclair);
 }
+
+
+.quentin-round {
+    border-radius: var(--border-radius-global);
+  }
 
 
 .dropdown-item.mascho-bg-yellow:hover {
