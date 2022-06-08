@@ -1,6 +1,6 @@
 <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-charte-terre">
     
-    <div class="container">
+    <div class="container-fluid">
 
    
         {% if true %}
@@ -55,28 +55,28 @@
                         Profil
                     </a>
 
-                   {#  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
-                    {% if app.user %}
+                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
+                    {# {% if app.user %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_profil') }}">Profil</a>
+                            <a class="nav-link" href="{# {{ path('app_profil') }} #}">Profil</a>
                         </li>
-                        {% if is_granted('ROLE_ADMIN') %}
+                        {# {% if is_granted('ROLE_ADMIN') %} #}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+                                <a class="nav-link" href="{# {{ path('admin') }} #}">Admin</a>
                             </li>
-                        {% endif %}
+                        {# {% endif %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_logout') }}">Se deconnecter</a>
+                            <a class="nav-link" href="{# {{ path('app_logout') }} #}">Se deconnecter</a>
                         </li>
-                    {% else %}
+                    {# {% else %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
+                            <a class="nav-link" href="{# {{ path('app_login') }} #}">Se connecter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+                            <a class="nav-link" href="{# {{ path('app_register') }} #}">S'inscrire</a>
                         </li>
-                    {% endif %}
-                    </ul> #}
+                    {# {% endif %} #}
+                    </ul>
                 </li>
             </ul>
         </div>
