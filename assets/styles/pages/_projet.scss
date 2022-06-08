@@ -121,13 +121,13 @@
       display: block;
       font-size: 14px;
       transition: background-color 110ms ease-in-out,color 110ms ease-in-out;
-/*       color: $g-text-color;
- */    }
+       color: --bs-light;
+    }
   }
   
   .list__content:hover {
     span {
-      /* color: $g-brand-secondary-color; */
+       color: --bs-light;
       background-color: #ececec;
       border-radius: .5rem;
     }
@@ -210,7 +210,7 @@
     color: #444;
     transition: color 110ms ease-in-out;
     &:hover {
-     /*  color: $g-black; */
+       color: --bs-light;
     }
   }
   
@@ -480,7 +480,7 @@
         transition: 0.3s;
         > a {
           font-size: 16px;
-        /*   color: $g-brand-color; */
+         color: --bs-light;
           transition: color 110ms ease-in-out;
           &:hover {
             color: #a0a0a0;
@@ -552,7 +552,7 @@
         z-index: 9;
         padding: 4px 16px 14px;
         left: 0;
-       /*  background: $g-white; */
+        background: --bs-light !important;
         box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2); // x-offset y-offset blur spread
         transition: all 300ms ease-in-out;
         opacity: 0;
@@ -584,6 +584,7 @@
   .is-grid-active {
     .product-m:hover {
       box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+      
       .product-m__add-cart {
         opacity: 1;
         visibility: visible;
@@ -598,6 +599,7 @@
         top: 99%;
         opacity: 1;
         visibility: visible;
+        background-color: white !important;
       }
     }
   }

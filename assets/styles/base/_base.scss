@@ -3,3 +3,15 @@ body {
     position: relative;
     cursor: default !important;
 }
+
+.quentin-children-no-margin {
+    & > *::after {
+      margin: unset!important;
+    }
+  }
+
+  a,a:hover,a:focus {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }

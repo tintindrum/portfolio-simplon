@@ -1,9 +1,159 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_landing.html.twig' %}
 
-{% block title %}Accueil - Partie Back{% endblock %}
+{% block title %}Accueil Front end{% endblock %}
 
 {% block body %}
- <h1 class="text-center mont">Examen Partie Back End</h1>
+
+                <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-charte-terre">
+                    
+                    <div class="container-fluid">
+
+                
+                        {% if true %}
+                            <a class="navbar-brand mx-2 d-flex flex-column" href="{{ path('app_mainfront') }}">
+                                <img class="quentin-round" height="50" width="50" src="{{asset('img/logoqd.jpg')}}" alt="Projet examen Simplon">
+                                <small class="sil2 verysmall fw-bold text-center mt-1 text-capitalize text-black">Projet Examen<br> Simplon</small>
+                            </a>
+                        {% elseif logo_id is not defined or not logo_id %}
+                        <a class="navbar-brand" href="{{ path('app_main') }}">{{ SITE_NAME }}</a>
+                        {% else %}
+                            <a class="navbar-brand mx-2" href="{{ path('app_mainfront') }}"><img height="80" src="{{asset('Final/'~logo_id~'.png')}}" alt="Projet examen Simplon"></a>
+                        {% endif %}
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1 gap-3">
+                                
+                                <li class="nav-item flex-grow-1 mx-2">
+                                    <form class="d-flex">
+                                        <div class="input-group mx-2 searchnav">
+                                            <div class="form-floating flex-grow-1">
+                                            <input class="form-control" type="search" placeholder="Qu'est ce qui vous ferait plaisir ?" aria-label="Search" id="search">
+                                                <label for="search" class="text-muted">{# {{ reglages_service.get('invite de recherche') }} #}Vous recherchez quoi ?</label>
+                                            </input>
+                                            </div>
+                                            <button class="main-search-button btn text-black" type="submit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search-heart">
+                                                    <use xlink:href="#svg-search-heart"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 mashco-children-no-margin text-black" href="{# {{ path('app_profil') }} #}"
+                                    id="navbarDropdownProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle">
+                                            <use xlink:href="#svg-person-circle"></use>
+                                        </svg>
+
+                                        Admin
+                                    </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
+                                    {#    {% if app.user %} #}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{# {{ path('app_profil') }} #}">Dashboard</a>
+                                        </li>
+                                    {#  {% if is_granted('ROLE_ADMIN') %} #}
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{# {{ path('admin') }} #}">Admin</a>
+                                            </li>
+                                    {#  {% endif %} #}
+                                        
+                                    </ul>
+                                </li>
+
+
+                            
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black" href="{# {{ path('app_profil') }} #}"
+                                    id="navbarDropdownProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle">
+                                            <use xlink:href="#svg-person-circle"></use>
+                                        </svg>
+
+                                        Profil
+                                    </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
+                                    {# {% if app.user %} #}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{# {{ path('app_profil') }} #}">Profil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{# {{ path('app_logout') }} #}">Se deconnecter</a>
+                                        </li>
+                                    {# {% else %} #}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{# {{ path('app_login') }} #}">Se connecter</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{# {{ path('app_register') }} #}">S'inscrire</a>
+                                        </li>
+                                    {# {% endif %} #}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <nav class="mega-menu bg-light">
+                <ul class="mega-menu-main">
+                    <li class="lvl-0">
+                    <a class="titresousnav" href="#">Accueil</a>
+                    
+                    </li>
+
+                    <li class="lvl-0">
+                    <a class="titresousnav" href="#">Projets</a>
+                    
+                    </li>
+
+                    <li class="lvl-0">
+                    <a class="titresousnav" href="#">Catégories</a>
+                    <ul class="mega-menu-tab">
+                        <li class="lvl-1">
+                        <h2>Catégorie 1</h2>
+                        <ul class="lvl-2">
+                            <li><a href="#">Lien Projet</a></li>
+                            <li><a href="#">Lien Projet</a></li>
+                            <li><a href="#">Lien Projet</a></li>
+                        </ul>
+                        </li>
+                        <li class="lvl-1">
+                        <h2>Catégorie 2</h2>
+                        <ul class="lvl-2">
+                            <li><a href="#">Lien Projet</a></li>
+                            <li><a href="#">Lien Projet</a></li>
+                            <li><a href="#">Lien Projet</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+
+                    <li class="lvl-0">
+                    <a class="titresousnav" href="#">A propos de moi</a>
+                    </li>
+
+                    <li class="lvl-0">
+                    <a class="titresousnav" href="#">Contactez-moi</a>
+                    </li>
+                
+                    
+                    </ul>
+                    </li>
+                </ul>
+                </nav>
+
+
+    <h1 class="text-center mont">Examen Partie Front End</h1>
 
     <div class="extra-space-l"></div>
      <!--====== Section nouveau produit caroussel ======-->
@@ -864,5 +1014,99 @@
         </div>
        
     </div>
+
+
+    <footer class="page-footer bg-light">
+    
+    
+    <div class="container">
+
+            <div class="row ">
+
+
+
+                    <div class="col-6">
+                        <div class="footer-logo align-item-center">
+                            <div class="footer-social"> 
+
+                                <h4>RETROUVEZ MOI SUR</h4> 
+                                 <div class="d-inline-block social-links">
+                                    <div class="d-inline-block item">
+                                        <img src="{{ asset('img/github.png') }}" alt="">
+                                    </div>
+                                    <div class="d-inline-block item">
+                                        <img src="{{ asset('img/linkedin.png') }}" alt="">
+                                    </div>
+                                    <div class="d-inline-block item">
+                                        <img src="{{ asset('img/social_facebook.png') }}" alt="">
+                                    </div>
+                                    {# <div class="d-inline-block item">
+                                        <img src="{{ asset('img/youtube-logo.png') }}" alt="">
+                                    </div> #}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    
+                    
+                    
+                    
+                    </div>
+                </div>
+
+                <div class="row justify-content-center" style="border-top: 1px solid #000;margin:4% 0px">
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="titrefoot-slot">
+                            <h4>Navigation</h4>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Projets</a></li>
+                            <li><a href="#">Catégories</a></li>
+                            <li><a href="{{ path('app_mainfront') }}">Profil</a></li>
+                        </ul>
+                    </div>
+               
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="titrefoot-slot">
+                        <h4>Contact</h4>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Contactez-moi</a></li>
+                            <li><a href="#">A propos de moi</a></li>
+                            
+                        </ul>
+                    </div>
+                   
+      </div>
+      
+      
+  </div>
+  </footer>
+
+
+   <section class="bande-mention bg-charte-terre">
+      
+        <div style="height:7vh" class="row align-items-center">
+             
+
+            <div>
+                <a class="text-light" href="">
+                    <p class="text-dark text-center">Quentin Drumel - Blog Projet Simplon - Copyright © 2022. Tout droit compris.</p>
+                </a>   
+           </div> 
+
+        </div>
+                         
+   </section>
+
+
+
+    
+
 
 {% endblock %}
