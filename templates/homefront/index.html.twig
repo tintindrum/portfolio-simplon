@@ -10,14 +10,14 @@
 
                 
                         {% if true %}
-                            <a class="navbar-brand mx-2 d-flex flex-column" href="{{ path('app_mainfront') }}">
+                            <a class="navbar-brand mx-2 d-flex flex-column" href="{{ path('app_landing') }}">
                                 <img class="quentin-round" height="50" width="50" src="{{asset('img/logoqd.jpg')}}" alt="Projet examen Simplon">
                                 <small class="sil2 verysmall fw-bold text-center mt-1 text-capitalize text-black">Projet Examen<br> Simplon</small>
                             </a>
                         {% elseif logo_id is not defined or not logo_id %}
                         <a class="navbar-brand" href="{{ path('app_main') }}">{{ SITE_NAME }}</a>
                         {% else %}
-                            <a class="navbar-brand mx-2" href="{{ path('app_mainfront') }}"><img height="80" src="{{asset('Final/'~logo_id~'.png')}}" alt="Projet examen Simplon"></a>
+                            <a class="navbar-brand mx-2" href="{{ path('app_landing') }}"><img height="80" src="{{asset('Final/'~logo_id~'.png')}}" alt="Projet examen Simplon"></a>
                         {% endif %}
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -107,7 +107,7 @@
                 <nav class="mega-menu bg-light">
                 <ul class="mega-menu-main">
                     <li class="lvl-0">
-                    <a class="titresousnav" href="#">Accueil</a>
+                    <a class="titresousnav" href="{{ path('app_landing') }}">Accueil</a>
                     
                     </li>
 
