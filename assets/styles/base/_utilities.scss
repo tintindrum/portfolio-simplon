@@ -1,0 +1,159 @@
+:root {
+    --quentin-primary: #7378d9;
+    --quentin-secondary: #060E40;
+    --quentin-tertiary: #232b59;
+    --quentin-quartiary: #5abf90;
+
+    --bs-light: rgb(239, 238, 231); //
+    //--mashco-dark: #242021;
+    --quentin-dark: rgb(36,32,33); //
+    --border-radius-global: 1.4rem;
+
+    
+    --quentin-charte-terreclair: #d6cdbb; //
+    --quentin-light-like: #ff7eb4;
+    --quentin-like: #ff2581;
+
+
+      
+}
+
+.bg-primary {
+    background-color: var(--quentin-primary);
+}
+
+.bg-secondary {
+    background-color: var(--quentin-secondary);
+}
+
+.bg-tertiary {
+    background-color: var(--quentin-tertiary);
+}
+
+.bg-quartiary {
+    background-color: var(--quentin-quartiary);
+}
+
+
+.bg-charte-terre {
+    background-color: var(--quentin-charte-terreclair);
+}
+
+
+.quentin-round {
+    border-radius: var(--border-radius-global);
+  }
+
+
+.dropdown-item.mascho-bg-yellow:hover {
+    background-color: var(--quentin-yellow);
+    opacity: .9;
+}
+
+.mont {
+    font-family: Montserrat, "Segoe UI", sans-serif;
+}
+
+.crim {
+    font-family: "Crimson Pro", fantasy;
+}
+
+.sil2 {
+    font-family: "Shadows Into Light Two", fantasy;
+}
+
+
+.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+
+//.text-transform-capitalzie {
+//    text-transform: capitalize;
+//}
+.verysmall {
+    font-size: 0.4em !important;
+}
+
+.small {
+    font-size: small;
+}
+
+.x-small {
+    font-size: x-small;
+}
+
+.xx-small {
+    font-size: xx-small;
+}
+
+.fw-semibold {
+    font-weight: 500;
+}
+
+
+/* espacement */
+
+.minus-space-l {
+	width: 100%;
+	height: -50px;
+}
+.extra-space-m {
+	width: 100%;
+	height: 20px;
+}
+.extra-space-l {
+	width: 100%;
+	height: 40px;
+}
+.extra-space-xl {
+	width: 100%;
+	height: 60px;
+}
+.extra-space-xxl {
+	width: 100%;
+	height: 80px;
+}
+
+/* soulignement titre */
+
+.title-underline-center {
+    border: 2px solid #222;
+    border-radius: 2em;
+    background-color: rgb(40, 73, 27);
+    width: 3.5rem;
+    float: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+
+  /* margin  */
+
+
+  .topmargin {
+      margin-top: -1%;
+  }
+
+  .u-s-m-b-30 {
+    margin-bottom: 1.875rem; }
+    
+    
+  .u-s-p-b-60 {
+    padding-bottom: 3.75rem; }
+
+  .u-s-m-b-46 {
+    margin-bottom: 2.875rem; }
+
+    .u-s-p-y-90 {
+        padding-top: 5.625rem;
+        padding-bottom: 5.625rem; }
+
+
+
+       
+      
+
+
+      
+  
