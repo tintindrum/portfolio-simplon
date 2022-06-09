@@ -4,109 +4,118 @@
 
 {% block body %}
 
-            {# navigation barre accueil #}
-            <nav class="mega-menu bg-light">
-                <ul class="mega-menu-main">
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">Accueil</a>
-                    
-                    </li>
+    {# navigation barre accueil #}
+    <nav class="mega-menu bg-light">
+        <ul class="mega-menu-main">
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">Accueil</a>
 
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">Partie Examen</a>
-                    <ul class="mega-menu-tab">
-                        <li class="lvl-1">
+            </li>
+
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">Partie Examen</a>
+                <ul class="mega-menu-tab">
+                    <li class="lvl-1">
                         <h2>Maquette</h2>
                         <ul class="lvl-2">
-                            <li><a href="{{ path('app_maquette') }}">Figma</a></li>
+                            <li>
+                                <a href="{{ path('app_maquette') }}">Figma</a>
+                            </li>
                         </ul>
-                        </li>
-                        <li class="lvl-1">
+                    </li>
+                    <li class="lvl-1">
                         <h2>Front-end</h2>
                         <ul class="lvl-2">
-                            <li><a href="{{ path('app_mainfront') }}">Accueil Partie Front-end</a></li>
+                            <li>
+                                <a href="{{ path('app_mainfront') }}">Accueil Partie Front-end</a>
+                            </li>
                         </ul>
-                        </li>
-                        <li class="lvl-1">
+                    </li>
+                    <li class="lvl-1">
                         <h2>Back-end</h2>
                         <ul class="lvl-2">
-                            <li><a href="{{ path('app_main') }}">Accueil Partie Back-end</a></li>
+                            <li>
+                                <a href="{{ path('app_main') }}">Accueil Partie Back-end</a>
+                            </li>
                         </ul>
-                        </li>
-                    </ul>
-                    </li>
-
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">A propos de moi</a>
-                    </li>
-                    
-                    </ul>
                     </li>
                 </ul>
-            </nav> 
+            </li>
 
-            
-            <!--====== Section Intro ======-->
-                <div class="section__intro u-s-m-b-46">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section__text-wrap">
-                                    <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Examen Simplon Juin 2022</h2>
-                                    <div class="title-underline-center"></div>
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">A propos de moi</a>
+            </li>
 
-{#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
- #}                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--====== End - Section Intro ======-->
+        </ul>
+    </li>
+</ul>
+</nav>
 
+<!--====== Section Intro ======-->
+<div class="section__intro u-s-m-b-46">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__text-wrap">
+                <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Examen Simplon Juin 2022</h2>
+                <div class="title-underline-center"></div>
 
+                {#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
+ #}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--====== End - Section Intro ======-->
 
-                <div id="landingcardcontainer" class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
-                    <div class="cardlanding d-flex position-relative flex-column">
-                        <a href="{{ path('app_maquette') }}">
-                        <div class='imgContainer'>
-                            <img src='{{asset('img/maquettelogo.webp')}}' height="250px">
-                        </div>
-                        <div class="content">
-                            <h3>Maquette</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
-                        </div>
-                        </a>
-                    </div>
-                    
-                    
-                    <div class="cardlanding d-flex position-relative flex-column">
-                        <a href="{{ path('app_mainfront') }}">
-                        <div class='imgContainer'>
-                            <img src='{{asset('img/frontendlogo.jpg')}}'>
-                        </div>
-                        <div class="content">
-                            <h3>Front-End</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
-                        </div>
-                        </a>
-                    </div>
+<div
+id="landingcardcontainer"
+class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+<div class="cardlanding d-flex position-relative flex-column">
+    <a href="{{ path('app_maquette') }}">
+        <div class='imgContainer'>
+            <img
+                src='{{asset('
+                img/maquettelogo.webp')}}'="img/maquettelogo.webp')}}'"
+                height="250px">
+        </div>
+        <div class="content">
+            <h3>Maquette</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget
+                velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis
+                urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </a>
+</div>
 
-                    <div class="cardlanding d-flex position-relative flex-column">
-                     <a href="{{ path('app_main') }}">
-                        <div class='imgContainer'>
-                            <img src='{{asset('img/backendlogo.jpg')}}'>
-                        </div>
-                        <div class="content">
-                            <h3>Back-End</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
+<div class="cardlanding d-flex position-relative flex-column">
+    <a href="{{ path('app_mainfront') }}">
+        <div class='imgContainer'>
+            <img src='{{asset(' img/frontendlogo.jpg')}}'="img/frontendlogo.jpg')}}'">
+        </div>
+        <div class="content">
+            <h3>Front-End</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget
+                velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis
+                urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </a>
+</div>
 
-
-
-
-
+<div class="cardlanding d-flex position-relative flex-column">
+    <a href="{{ path('app_main') }}">
+        <div class='imgContainer'>
+            <img src='{{asset(' img/backendlogo.jpg')}}'="img/backendlogo.jpg')}}'">
+        </div>
+        <div class="content">
+            <h3>Back-End</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget
+                velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis
+                urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+</a>
+</div>
 
 {% endblock %}

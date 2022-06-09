@@ -4,556 +4,702 @@
 
 {% block body %}
 
-                <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-charte-terre">
-                    
-                    <div class="container-fluid">
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-charte-terre">
 
-                
-                        {% if true %}
-                            <a class="navbar-brand mx-2 d-flex flex-column" href="{{ path('app_landing') }}">
-                                <img class="quentin-round" height="50" width="50" src="{{asset('img/logoqd.jpg')}}" alt="Projet examen Simplon">
-                                <small class="sil2 verysmall fw-bold text-center mt-1 text-capitalize text-black">Projet Examen<br> Simplon</small>
-                            </a>
-                        {% elseif logo_id is not defined or not logo_id %}
-                        <a class="navbar-brand" href="{{ path('app_main') }}">{{ SITE_NAME }}</a>
-                        {% else %}
-                            <a class="navbar-brand mx-2" href="{{ path('app_landing') }}"><img height="80" src="{{asset('Final/'~logo_id~'.png')}}" alt="Projet examen Simplon"></a>
-                        {% endif %}
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1 gap-3">
-                                
-                                <li class="nav-item flex-grow-1 mx-2">
-                                    <form class="d-flex">
-                                        <div class="input-group mx-2 searchnav">
-                                            <div class="form-floating flex-grow-1">
-                                            <input class="form-control" type="search" placeholder="Qu'est ce qui vous ferait plaisir ?" aria-label="Search" id="search">
-                                                <label for="search" class="text-muted">{# {{ reglages_service.get('invite de recherche') }} #}Vous recherchez quoi ?</label>
-                                            </input>
-                                            </div>
-                                            <button class="main-search-button btn text-black" type="submit">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search-heart">
-                                                    <use xlink:href="#svg-search-heart"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
+        <div class="container-fluid">
 
+            {% if true %}
+                <a
+                    class="navbar-brand mx-2 d-flex flex-column"
+                    href="{{ path('app_landing') }}">
+                    <img
+                        class="quentin-round"
+                        height="50"
+                        width="50"
+                        src="{{asset('img/logoqd.jpg')}}"
+                        alt="Projet examen Simplon">
+                    <small
+                        class="sil2 verysmall fw-bold text-center mt-1 text-capitalize text-black">Projet Examen<br>
+                        Simplon</small>
+                </a>
+            {% elseif logo_id is not defined or not logo_id %}
+                <a class="navbar-brand" href="{{ path('app_main') }}">{{ SITE_NAME }}</a>
+            {% else %}
+                <a class="navbar-brand mx-2" href="{{ path('app_landing') }}"><img
+                    height="80"
+                    src="{{asset('Final/'~logo_id~'.png')}}"
+                    alt="Projet examen Simplon"></a>
+            {% endif %}
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1 gap-3">
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 mashco-children-no-margin text-black" href="{# {{ path('app_profil') }} #}"
-                                    id="navbarDropdownProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle">
-                                            <use xlink:href="#svg-person-circle"></use>
-                                        </svg>
-
-                                        Admin
-                                    </a>
-
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
-                                    {#    {% if app.user %} #}
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{# {{ path('app_profil') }} #}">Dashboard</a>
-                                        </li>
-                                    {#  {% if is_granted('ROLE_ADMIN') %} #}
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{# {{ path('admin') }} #}">Admin</a>
-                                            </li>
-                                    {#  {% endif %} #}
-                                        
-                                    </ul>
-                                </li>
-
-
-                            
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black" href="{# {{ path('app_profil') }} #}"
-                                    id="navbarDropdownProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle">
-                                            <use xlink:href="#svg-person-circle"></use>
-                                        </svg>
-
-                                        Profil
-                                    </a>
-
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfil">
-                                    {# {% if app.user %} #}
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{# {{ path('app_profil') }} #}">Profil</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{# {{ path('app_logout') }} #}">Se deconnecter</a>
-                                        </li>
-                                    {# {% else %} #}
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{# {{ path('app_login') }} #}">Se connecter</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{# {{ path('app_register') }} #}">S'inscrire</a>
-                                        </li>
-                                    {# {% endif %} #}
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-
-                <nav class="mega-menu bg-light">
-                <ul class="mega-menu-main">
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="{{ path('app_landing') }}">Accueil</a>
-                    
+                    <li class="nav-item flex-grow-1 mx-2">
+                        <form class="d-flex">
+                            <div class="input-group mx-2 searchnav">
+                                <div class="form-floating flex-grow-1">
+                                    <input
+                                        class="form-control"
+                                        type="search"
+                                        placeholder="Qu'est ce qui vous ferait plaisir ?"
+                                        aria-label="Search"
+                                        id="search">
+                                        <label for="search" class="text-muted">{# {{ reglages_service.get('invite de recherche') }} #}Vous recherchez quoi ?</label>
+                                    </input>
+                                </div>
+                                <button class="main-search-button btn text-black" type="submit">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="30"
+                                        height="30"
+                                        fill="currentColor"
+                                        class="bi bi-search-heart">
+                                        <use xlink:href="#svg-search-heart"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
                     </li>
 
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">Projets</a>
-                    
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 mashco-children-no-margin text-black"
+                            href="{# {{ path('app_profil') }} #}"
+                            id="navbarDropdownProfil"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-person-circle">
+                                <use xlink:href="#svg-person-circle"></use>
+                            </svg>
 
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">Catégories</a>
-                    <ul class="mega-menu-tab">
-                        <li class="lvl-1">
-                        <h2>Catégorie 1</h2>
-                        <ul class="lvl-2">
-                            <li><a href="#">Lien Projet</a></li>
-                            <li><a href="#">Lien Projet</a></li>
-                            <li><a href="#">Lien Projet</a></li>
+                            Admin
+                        </a>
+
+                        <ul
+                            class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownProfil">
+                            {#    {% if app.user %} #}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('app_profil') }} #}">Dashboard</a>
+                            </li>
+                            {#  {% if is_granted('ROLE_ADMIN') %} #}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('admin') }} #}">Admin</a>
+                            </li>
+                            {#  {% endif %} #}
+
                         </ul>
-                        </li>
-                        <li class="lvl-1">
-                        <h2>Catégorie 2</h2>
-                        <ul class="lvl-2">
-                            <li><a href="#">Lien Projet</a></li>
-                            <li><a href="#">Lien Projet</a></li>
-                            <li><a href="#">Lien Projet</a></li>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black"
+                            href="{# {{ path('app_profil') }} #}"
+                            id="navbarDropdownProfil"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-person-circle">
+                                <use xlink:href="#svg-person-circle"></use>
+                            </svg>
+
+                            Profil
+                        </a>
+
+                        <ul
+                            class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownProfil">
+                            {# {% if app.user %} #}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('app_profil') }} #}">Profil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('app_logout') }} #}">Se deconnecter</a>
+                            </li>
+                            {# {% else %} #}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('app_login') }} #}">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{# {{ path('app_register') }} #}">S'inscrire</a>
+                            </li>
+                            {# {% endif %} #}
                         </ul>
-                        </li>
-                    </ul>
-                    </li>
-
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">A propos de moi</a>
-                    </li>
-
-                    <li class="lvl-0">
-                    <a class="titresousnav" href="#">Contactez-moi</a>
-                    </li>
-                
-                    
-                    </ul>
                     </li>
                 </ul>
-                </nav>
-
-
-    <h1 class="text-center mont">Examen Partie Front End</h1>
-
-    <div class="extra-space-l"></div>
-     <!--====== Section nouveau produit caroussel ======-->
-            <div class="u-s-p-b-60">
-
-                <!--====== Section Intro ======-->
-                <div class="section__intro u-s-m-b-46">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section__text-wrap">
-                                    <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Les derniers Projets réalisés</h2>
-                                    <div class="title-underline-center"></div>
-
-{#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
- #}                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--====== End - Section Intro ======-->
-
-
-                <!--====== Section Content ======-->
-                <div class="section__content">
-                    <div class="container">
-                        <div class="slider-fouc">
-                            <div class="owl-carousel product-slider" data-item="4">
-                                <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-                               <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-                                <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-                                <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="u-s-m-b-30">
-                                    <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    
-                                                    <li>
-
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <span class="product-o__category">
-
-                                            <a href="shop-side-version-2.html">Catégories</a></span>
-
-                                        <span class="product-o__name">
-
-                                            <a href="product-detail.html">NOM projet</a></span>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--====== End - Section Content ======-->
             </div>
-            <!--====== End - Section nouveau produit ======-->
+        </div>
+    </nav>
 
+    <nav class="mega-menu bg-light">
+        <ul class="mega-menu-main">
+            <li class="lvl-0">
+                <a class="titresousnav" href="{{ path('app_landing') }}">Accueil</a>
 
+            </li>
+
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">Projets</a>
+
+            </li>
+
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">Catégories</a>
+                <ul class="mega-menu-tab">
+                    <li class="lvl-1">
+                        <h2>Catégorie 1</h2>
+                        <ul class="lvl-2">
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="lvl-1">
+                        <h2>Catégorie 2</h2>
+                        <ul class="lvl-2">
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                            <li>
+                                <a href="#">Lien Projet</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">A propos de moi</a>
+            </li>
+
+            <li class="lvl-0">
+                <a class="titresousnav" href="#">Contactez-moi</a>
+            </li>
+
+        </ul>
+    </li>
+</ul>
+</nav>
+
+<h1 class="text-center mont">Examen Partie Front End</h1>
+
+<div class="extra-space-l"></div>
+<!--====== Section nouveau produit caroussel ======-->
+<div class="u-s-p-b-60">
+
+<!--====== Section Intro ======-->
+<div class="section__intro u-s-m-b-46">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section__text-wrap">
+                    <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Les derniers Projets réalisés</h2>
+                    <div class="title-underline-center"></div>
+
+                    {#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
+ #}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====== End - Section Intro ======-->
+
+<!--====== Section Content ======-->
+<div class="section__content">
+    <div class="container">
+        <div class="slider-fouc">
+            <div class="owl-carousel product-slider" data-item="4">
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="u-s-m-b-30">
+                    <div class="product-o product-o--hover-on">
+                        <div class="product-o__wrap">
+
+                            <a
+                                class="aspect aspect--bg-grey aspect--square u-d-block"
+                                href="product-detail.html">
+
+                                <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" alt=""></a>
+                            <div class="product-o__action-wrap">
+                                <ul class="product-o__action-list">
+
+                                    <li>
+
+                                        <a
+                                            data-modal="modal"
+                                            data-modal-id="#add-to-cart"
+                                            data-tooltip="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <span class="product-o__category">
+
+                            <a href="shop-side-version-2.html">Catégories</a>
+                        </span>
+
+                        <span class="product-o__name">
+
+                            <a href="product-detail.html">NOM projet</a>
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--====== End - Section Content ======-->
+</div>
+<!--====== End - Section nouveau produit ======-->
 
 <div class="extra-space-xl"></div>
-                <div class="section__intro u-s-m-b-46">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section__text-wrap">
-                                    <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Tous les Projets réalisés</h2>
-                                    <div class="title-underline-center"></div>
+<div class="section__intro u-s-m-b-46">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__text-wrap">
+                <h2 class="section__heading u-c-secondary u-s-m-b-12 mont text-center">Tous les Projets réalisés</h2>
+                <div class="title-underline-center"></div>
 
-{#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
- #}                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--====== End - Section Intro ======-->
- 
- 
- 
- 
- 
- 
- <!--====== Main App ======-->
+                {#                                     <span class="section__span u-c-silver">Voici l'arrivée des nouveaux produits !</span>
+ #}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--====== End - Section Intro ======-->
+
+<!--====== Main App ======-->
 <div id="app">
 
- <!--====== App Content ======-->
-        <div class="app-content">
+<!--====== App Content ======-->
+<div class="app-content">
 
-            
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-90">
+        <div class="container">
+            <div class="row">
 
-            <!--====== Section 1 ======-->
-            <div class="u-s-p-y-90">
-                <div class="container">
-                    <div class="row">
+                <div class="col-lg-3 col-md-12 ">
+                    <div class="shop-w-master">
+                        <h1 class="shop-w-master__heading u-s-m-b-30">
+                            <i class="fas fa-filter u-s-m-r-8"></i>
 
-                    <div class="col-lg-3 col-md-12 ">
-                            <div class="shop-w-master">
-                                <h1 class="shop-w-master__heading u-s-m-b-30"><i class="fas fa-filter u-s-m-r-8"></i>
+                            <span>FILTRES</span></h1>
+                        <div class="shop-w-master__sidebar sidebar--bg-snow">
 
-                                    <span>FILTRES</span></h1>
-                                <div class="shop-w-master__sidebar sidebar--bg-snow">
+                            <div class="u-s-m-b-30">
+                                <div class="shop-w">
+                                    <div class="shop-w__intro-wrap">
+                                        <h1 class="shop-w__h">CATEGORIES</h1>
 
-                                    <div class="u-s-m-b-30">
-                                        <div class="shop-w">
-                                            <div class="shop-w__intro-wrap">
-                                                <h1 class="shop-w__h">CATEGORIES</h1>
+                                        <span
+                                            class="fas fa-minus shop-w__toggle"
+                                            data-target="#s-category"
+                                            data-toggle="collapse"></span>
+                                    </div>
+                                    <div class="shop-w__wrap collapse show" id="s-category">
+                                        <ul class="shop-w__category-list gl-scroll">
+                                            <li class="has-list">
 
-                                                <span class="fas fa-minus shop-w__toggle" data-target="#s-category" data-toggle="collapse"></span>
-                                            </div>
-                                            <div class="shop-w__wrap collapse show" id="s-category">
-                                                <ul class="shop-w__category-list gl-scroll">
+                                                <a href="#">Catégories</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(23)</span>
+
+                                                <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                                                <ul style="display:block">
                                                     <li class="has-list">
 
-                                                        <a href="#">Catégories</a>
+                                                        <a href="#">Catégorie</a>
 
-                                                        <span class="category-list__text u-s-m-l-6">(23)</span>
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégorie</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégorie</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégorie</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégorie</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                            <li>
+
+                                                                <a href="#">Projet</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégorie</a>
 
                                                         <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
                                                         <ul style="display:block">
-                                                            <li class="has-list">
+                                                            <li>
 
-                                                                <a href="#">Catégorie</a>
-
-                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                                <ul>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
+                                                                <a href="#">Projet</a>
                                                             </li>
-                                                            <li class="has-list">
+                                                            <li>
 
-                                                                <a href="#">Catégorie</a>
-
-                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                                <ul>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
+                                                                <a href="#">Projet</a>
                                                             </li>
-                                                            <li class="has-list">
+                                                            <li>
 
-                                                                <a href="#">Catégorie</a>
-
-                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                                <ul>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
+                                                                <a href="#">Projet</a>
                                                             </li>
-                                                            <li class="has-list">
+                                                            <li>
 
-                                                                <a href="#">Catégorie</a>
-
-                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                                <ul>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
+                                                                <a href="#">Projet</a>
                                                             </li>
-                                                            <li class="has-list">
+                                                        </ul>
+                                                    </li>
 
-                                                                <a href="#">Catégorie</a>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                                <ul>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="has-list">
-
-                                                                <a href="#">Catégorie</a>
-
-                                                                <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
-                                                                <ul style="display:block">
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                    <li>
-
-                                                                        <a href="#">Projet</a></li>
-                                                                </ul>
-                                                            </li>
-                                                           
-                                                            
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                         </div>
-                                     </div>
-
-
-
-                    <div class="col-lg-9 col-md-12">
+                        <div class="col-lg-9 col-md-12">
                             <div class="shop-p">
                                 <div class="shop-p__toolbar u-s-m-b-30">
-                       
+
                                     <div class="shop-p__tool-style">
                                         <div class="tool-style__group u-s-m-b-8">
 
@@ -562,53 +708,66 @@
                                             <span class="js-shop-list-target">List</span></div>
                                         <form>
                                             <div class="tool-style__form-wrap">
-                                                <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                                                <div class="u-s-m-b-8">
+                                                    <select class="select-box select-box--transparent-b-2">
                                                         <option>Pages: 8</option>
-                                                        <option selected>Pages: 12</option>
+                                                        <option selected="selected">Pages: 12</option>
                                                         <option>Pages: 16</option>
                                                         <option>Pages: 28</option>
-                                                    </select></div>
-                                                <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
-                                                        <option selected>Trier par: Newest Items</option>
+                                                    </select>
+                                                </div>
+                                                <div class="u-s-m-b-8">
+                                                    <select class="select-box select-box--transparent-b-2">
+                                                        <option selected="selected">Trier par: Newest Items</option>
                                                         <option>Trier par: Latest Items</option>
                                                         <option>Trier par: Best Selling</option>
                                                         <option>Trier par: Best Rating</option>
                                                         <option>Trier par: Lowest Price</option>
                                                         <option>Trier par: Highest Price</option>
-                                                    </select></div>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="shop-p__collection">
                                     <div class="row is-grid-active">
-                                    {# debut des cards projets #}
-                                       
+                                        {# debut des cards projets #}
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m ">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -616,32 +775,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -650,33 +818,40 @@
                                             </div>
                                         </div>
 
-                                        
-                                        
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -684,32 +859,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -717,32 +901,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -750,65 +943,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m ">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
-                                                </div>
-                                                <div class="product-m__content">
-                                                    <div class="product-m__category">
-
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
-                                                    <div class="product-m__name">
-
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
-                                                    <div class="product-m__hover">
-                                                        <div class="product-m__preview-description">
-
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
-                                                        {# <div class="product-m__wishlist">
-
-                                                            <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product-m">
-                                                <div class="product-m__thumb">
-
-                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
-
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
-                                                    <div class="product-m__add-cart">
-
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
-                                                </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -823,25 +992,34 @@
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -849,32 +1027,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -882,32 +1069,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -915,32 +1111,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -948,32 +1153,83 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
                                                     <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
-                                                        <img class="aspect__img" src="{{ asset('img/fournitureheader.jpg') }}" width="355px" alt=""></a>
-                                                   
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a></div>
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">Catégorie</a></div>
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">Produit</a></div>
-                                                   
-                                                   
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
+                                                        {# <div class="product-m__wishlist">
+
+                                                            <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product-m">
+                                                <div class="product-m__thumb">
+
+                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
+
+                                                        <img
+                                                            class="aspect__img"
+                                                            src="{{ asset('img/fournitureheader.jpg') }}"
+                                                            width="355px"
+                                                            alt=""></a>
+
+                                                    <div class="product-m__add-cart">
+
+                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Voir le projet</a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-m__content">
+                                                    <div class="product-m__category">
+
+                                                        <a href="shop-side-version-2.html">Catégorie</a>
+                                                    </div>
+                                                    <div class="product-m__name">
+
+                                                        <a href="product-detail.html">Produit</a>
+                                                    </div>
+
+                                                    <div class="product-m__hover">
+                                                        <div class="product-m__preview-description">
+
+                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type
+                                                                specimen book.</span></div>
                                                         {# <div class="product-m__wishlist">
 
                                                             <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div> #}
@@ -989,19 +1245,24 @@
                                     <ul class="shop-p__pagination">
                                         <li class="is-active">
 
-                                            <a href="shop-grid-left.html">1</a></li>
+                                            <a href="shop-grid-left.html">1</a>
+                                        </li>
                                         <li>
 
-                                            <a href="shop-grid-left.html">2</a></li>
+                                            <a href="shop-grid-left.html">2</a>
+                                        </li>
                                         <li>
 
-                                            <a href="shop-grid-left.html">3</a></li>
+                                            <a href="shop-grid-left.html">3</a>
+                                        </li>
                                         <li>
 
-                                            <a href="shop-grid-left.html">4</a></li>
+                                            <a href="shop-grid-left.html">4</a>
+                                        </li>
                                         <li>
 
-                                            <a class="fas fa-angle-right" href="shop-grid-left.html"></a></li>
+                                            <a class="fas fa-angle-right" href="shop-grid-left.html"></a>
+                                        </li>
                                     </ul>
                                     <!--====== End - Pagination ======-->
                                 </div>
@@ -1012,101 +1273,96 @@
             </div>
             <!--====== End - Section 1 ======-->
         </div>
-       
+
     </div>
 
-
     <footer class="page-footer bg-light">
-    
-    
-    <div class="container">
+
+        <div class="container">
 
             <div class="row ">
 
+                <div class="col-6">
+                    <div class="footer-logo align-item-center">
+                        <div class="footer-social">
 
-
-                    <div class="col-6">
-                        <div class="footer-logo align-item-center">
-                            <div class="footer-social"> 
-
-                                <h4>RETROUVEZ MOI SUR</h4> 
-                                 <div class="d-inline-block social-links">
-                                    <div class="d-inline-block item">
-                                        <img src="{{ asset('img/github.png') }}" alt="">
-                                    </div>
-                                    <div class="d-inline-block item">
-                                        <img src="{{ asset('img/linkedin.png') }}" alt="">
-                                    </div>
-                                    <div class="d-inline-block item">
-                                        <img src="{{ asset('img/social_facebook.png') }}" alt="">
-                                    </div>
-                                     <div class="d-inline-block item">
-                                        <img src="{{ asset('img/figma-logofooter.png') }}" alt="">
-                                    </div>
+                            <h4>RETROUVEZ MOI SUR</h4>
+                            <div class="d-inline-block social-links">
+                                <div class="d-inline-block item">
+                                    <img src="{{ asset('img/github.png') }}" alt="">
+                                </div>
+                                <div class="d-inline-block item">
+                                    <img src="{{ asset('img/linkedin.png') }}" alt="">
+                                </div>
+                                <div class="d-inline-block item">
+                                    <img src="{{ asset('img/social_facebook.png') }}" alt="">
+                                </div>
+                                <div class="d-inline-block item">
+                                    <img src="{{ asset('img/figma-logofooter.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
-
-                    
-                    
-                    
-                    
-                    </div>
                 </div>
 
-                <div class="row justify-content-center" style="border-top: 1px solid #000;margin:4% 0px">
-                    <div class="col-xl-3 col-md-6 col-lg-3 ">
-                        <div class="titrefoot-slot">
-                            <h4>Navigation</h4>
-                        </div>
-                        <ul class="footer-links">
-                            <li><a href="#">Accueil</a></li>
-                            <li><a href="#">Projets</a></li>
-                            <li><a href="#">Catégories</a></li>
-                            <li><a href="{{ path('app_mainfront') }}">Profil</a></li>
-                        </ul>
-                    </div>
-               
-                    <div class="col-xl-3 col-md-6 col-lg-3 ">
-                        <div class="titrefoot-slot">
-                        <h4>Contact</h4>
-                        </div>
-                        <ul class="footer-links">
-                            <li><a href="#">Contactez-moi</a></li>
-                            <li><a href="#">A propos de moi</a></li>
-                            
-                        </ul>
-                    </div>
-                   
-      </div>
-      
-      
-  </div>
-  </footer>
+            </div>
+        </div>
 
+        <div
+            class="row justify-content-center"
+            style="border-top: 1px solid #000;margin:4% 0px">
+            <div class="col-xl-3 col-md-6 col-lg-3 ">
+                <div class="titrefoot-slot">
+                    <h4>Navigation</h4>
+                </div>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#">Projets</a>
+                    </li>
+                    <li>
+                        <a href="#">Catégories</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_mainfront') }}">Profil</a>
+                    </li>
+                </ul>
+            </div>
 
-   <section class="bande-mention bg-charte-terre">
-      
-        <div style="height:7vh" class="row align-items-center">
-             
+            <div class="col-xl-3 col-md-6 col-lg-3 ">
+                <div class="titrefoot-slot">
+                    <h4>Contact</h4>
+                </div>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">Contactez-moi</a>
+                    </li>
+                    <li>
+                        <a href="#">A propos de moi</a>
+                    </li>
 
-            <div>
-                <a class="text-light" href="">
-                    <p class="text-dark text-center">Quentin Drumel - Blog Projet Simplon - Copyright © 2022. Tout droit compris.</p>
-                </a>   
-           </div> 
+                </ul>
+            </div>
 
         </div>
-                         
-   </section>
 
+    </div>
+</footer>
 
+<section class="bande-mention bg-charte-terre">
 
-    
+    <div style="height:7vh" class="row align-items-center">
 
+        <div>
+            <a class="text-light" href="">
+                <p class="text-dark text-center">Quentin Drumel - Blog Projet Simplon - Copyright © 2022. Tout droit compris.</p>
+            </a>
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
