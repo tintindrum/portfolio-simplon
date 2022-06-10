@@ -1,9 +1,4 @@
 
-  li {
-    list-style: none;
-  }
-
-
 .mega-menu a {
     display: block;
     color: rgb(87, 87, 87);
@@ -20,7 +15,7 @@
   .mega-menu-main {
     display: flex;
     position: relative;
-    justify-content: start;
+    justify-content: center;
     transition: 0.4s all;  
       
     
@@ -44,7 +39,7 @@
       }
       .titresousnav:hover:after {
         width: 90%;
-        background: rgb(131, 78, 10);
+        background: rgb(3, 106, 1);
       }
 
   }
@@ -64,7 +59,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 50%;
+    width: 100%;
     margin-top: 5px;
     background: #ffffff;
     border-top: 1px solid transparent;

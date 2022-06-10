@@ -1,35 +1,6 @@
 {% set article_show = path('article_show', {'slug': article.slug}) %}
 
-{# <article class="mb-5">
-    <div class="row">
 
-        <div class="col-md-5">
-        {% if article.featuredImage %}
-            <a href="{{ article_show }}">
-                <img src="/upload/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.filename.altText }}" loading="lazy" width="350" height="250">
-            </a>
-            
-        {% endif %}
-
-        </div>
-
-        <div class="col-md-7">
-            <h2>
-                <a class="text-decoration-none" href="{{ article_show }}">{{ article.title }}</a>
-            </h2>
-
-            <p>
-                {{ article.createAt|date('d M Y')}}
-            </p>
-
-            {{ article.featuredText ?: article.content|striptags|slice(0, 130) ~ '...' }}
-        
-        
-        </div>
-    </div>
-
-</article>
- #}
 
 {# card caroussel projets  #}
 <div class="u-s-m-b-30">
@@ -44,9 +15,16 @@
                         loading="lazy"
                         width="350"
                         height="250">
+                    
                 </a>
 
             {% endif %}
+
+            <img
+                class="aspect__img"
+                src="{{ asset('img/fournitureheader.jpg') }}"
+                width="355px"
+                alt="">
 
             <div class="product-o__action-wrap">
                 <ul class="product-o__action-list">
@@ -54,11 +32,8 @@
                     <li>
 
                         <a
-                            data-modal="modal"
-                            data-modal-id="#add-to-cart"
-                            data-tooltip="tooltip"
-                            data-placement="top"
-                            title="Add to Cart">
+                            href="{{ article_show }}"
+                            title="Voir le projet">
                             <i class="fas fa-plus-circle"></i>
                         </a>
                     </li>
@@ -69,7 +44,7 @@
 
         <span class="product-o__category">
 
-            <a href="shop-side-version-2.html">Catégories</a>
+            <a href="shop-side-version-2.html">{# {{ category.name }} #}</a>
         </span>
 
         <span class="product-o__name">

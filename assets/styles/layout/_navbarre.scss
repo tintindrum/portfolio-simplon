@@ -45,3 +45,26 @@ body > .navbar:first-of-type {
   justify-content: space-between !important;
   align-items: center;
 }
+
+
+.ongletnav {
+    text-decoration:none;
+    line-height: 70px;
+   padding: 0 0px; 
+    font-size: 1em;
+    color: #000000;
+    font-weight: bold;
+}
+.ongletnav:after {
+    content: '';
+    display: block;
+    margin: 15px auto;
+    height: 3px !important;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  .ongletnav:hover:after {
+    width: 90%;
+    background: rgb(131, 78, 10);
+  }

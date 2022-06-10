@@ -2,20 +2,25 @@
 
     <div class="container">
 
-        <div class="row ">
+       
 
-            <div class="col-6">
-                <div class="footer-logo align-item-center">
-                    <div class="footer-social">
+                    <div
+                        class="row justify-content-center"
+                        style="border-top: 1px solid #000;margin:4% 0px">
 
-                        <h4>RETROUVEZ MOI SUR</h4>
-                        <div class="d-inline-block social-links">
-                            <div class="d-inline-block item">
-                                <img src="{{ asset('img/github.png') }}" alt=""></div>
-                                <div class="d-inline-block item">
-                                    <img src="{{ asset('img/linkedin.png') }}" alt=""></div>
-                                    <div class="d-inline-block item">
-                                        <img src="{{ asset('img/social_facebook.png') }}" alt=""></div>
+                            <div class="col-xl-3 col-md-6 col-lg-3 ">
+                                <div class="footer-logo align-item-center">
+                                    <div class="footer-social">
+                                            <div class="titrefoot-slot">
+                                                <h4>RETROUVEZ MOI SUR</h4>
+                                            </div>
+                                        <div class="d-inline-block social-links">
+                                            <div class="d-inline-block item">
+                                            <img src="{{ asset('img/github.png') }}" alt=""></div>
+                                        <div class="d-inline-block item">
+                                            <img src="{{ asset('img/linkedin.png') }}" alt=""></div>
+                                        <div class="d-inline-block item">
+                                            <img src="{{ asset('img/social_facebook.png') }}" alt=""></div>
                                         <div class="d-inline-block item">
                                             <img src="{{ asset('img/figma-logofooter.png') }}" alt=""></div>
                                         </div>
@@ -23,51 +28,45 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-
-                    <div
-                        class="row justify-content-center"
-                        style="border-top: 1px solid #000;margin:4% 0px">
-                        <div class="col-xl-3 col-md-6 col-lg-3 ">
-                            <div class="titrefoot-slot">
-                                <h4>Navigation</h4>
+                            <div class="col-xl-3 col-md-6 col-lg-3 ">
+                                <div class="titrefoot-slot">
+                                    <h4>Navigation</h4>
+                                </div>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="#">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Projets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Catégories</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('app_main') }}">Profil</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="footer-links">
-                                <li>
-                                    <a href="#">Accueil</a>
-                                </li>
-                                <li>
-                                    <a href="#">Projets</a>
-                                </li>
-                                <li>
-                                    <a href="#">Catégories</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('app_main') }}">Profil</a>
-                                </li>
-                            </ul>
-                        </div>
 
-                        <div class="col-xl-3 col-md-6 col-lg-3 ">
-                            <div class="titrefoot-slot">
-                                <h4>Contact</h4>
+                            <div class="col-xl-3 col-md-6 col-lg-3 ">
+                                <div class="titrefoot-slot">
+                                    <h4>Contact</h4>
+                                </div>
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="#">Contactez-moi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">A propos de moi</a>
+                                    </li>
+
+                                </ul>
                             </div>
-                            <ul class="footer-links">
-                                <li>
-                                    <a href="#">Contactez-moi</a>
-                                </li>
-                                <li>
-                                    <a href="#">A propos de moi</a>
-                                </li>
 
-                            </ul>
                         </div>
 
                     </div>
-
-                </div>
-            </footer>
+                </footer>
 
             <section class="bande-mention bg-charte-terre">
 

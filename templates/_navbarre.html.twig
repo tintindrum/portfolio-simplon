@@ -10,9 +10,7 @@
                     width="50"
                     src="{{asset('img/logoqd.jpg')}}"
                     alt="Projet examen Simplon">
-                <small
-                    class="sil2 verysmall fw-bold text-center mt-1 text-capitalize text-black">Projet Examen<br>
-                    Simplon</small>
+                
             </a>
         {% elseif logo_id is not defined or not logo_id %}
             <a class="navbar-brand" href="{{ path('app_main') }}">{{ SITE_NAME }}</a>
@@ -62,10 +60,34 @@
                     </form>
                 </li>
 
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="{{ path('app_main') }}">Accueil</a>
+
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="{{ path('app_articles') }}">Projets</a>
+
+                </li>
+
+
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="#">A propos de moi</a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="#">Contactez-moi</a>
+                </li>
+
+
+                
+
+                
+
                 <li class="nav-item dropdown">
                     <a
                         class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 mashco-children-no-margin text-black"
-                        href="{# {{ path('app_profil') }} #}"
+                        href=""
                         id="navbarDropdownProfil"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -87,11 +109,11 @@
                         aria-labelledby="navbarDropdownProfil">
                         {#    {% if app.user %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin') }}">">Tableau de bord</a>
+                            <a class="nav-link" href="{{ path('admin') }}">Tableau de bord</a>
                         </li>
                         {#  {% if is_granted('ROLE_ADMIN') %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{# {{ path('admin') }} #}">Admin</a>
+                            <a class="nav-link" href="{# {{ path('admin') }} #}">Créer Projet</a>
                         </li>
                         {#  {% endif %} #}
 
