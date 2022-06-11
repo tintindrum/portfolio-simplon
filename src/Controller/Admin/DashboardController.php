@@ -2,18 +2,20 @@
 
 namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
-use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use App\Entity\Menu;
+use App\Entity\Article;
+use App\Entity\Comment;
+use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use App\Entity\Article;
-use App\Entity\Category;
-
-
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+
+
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -40,17 +42,26 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Symfony CMS');
+            ->setTitle('Panel Administrateur');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('Retour sur le site', 'fa fa-arrow-left', 'app_main');
         
-        yield MenuItem::subMenu('Articles', 'fas fa-newspaper')->setSubItems([
-            MenuItem::linkToCrud('Tous les Articles', 'fas fa-newspaper', Article::class),
+        yield MenuItem::subMenu('Projets', 'fas fa-newspaper')->setSubItems([
+            MenuItem::linkToCrud('Tous les Projets', 'fas fa-newspaper', Article::class),
             MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class)
         ]);
+
+        yield MenuItem::subMenu('Menus', 'fas fa-list')->setSubItems([
+            MenuItem::linkToCrud('Pages', 'fas fa-newspaper', Menu::class),
+            MenuItem::linkToCrud('Articles', 'fas fa-newspaper', Menu::class),
+            MenuItem::linkToCrud('Lien personnalisés', 'fas fa-newspaper', Menu::class),
+            MenuItem::linkToCrud('Catégories', 'fas fa-newspaper', Menu::class),
+        ]);
+ 
+        yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comment::class);
     }
 }

@@ -1,0 +1,75 @@
+                    <div class="col-lg-3 col-md-12 ">
+                            <div class="shop-w-master">
+                                <h1 class="shop-w-master__heading u-s-m-b-30">
+                                    <i class="fas fa-filter u-s-m-r-8"></i>
+
+                                    <span>FILTRES</span>
+                                </h1>
+                                <div class="shop-w-master__sidebar sidebar--bg-snow">
+
+                                    <div class="u-s-m-b-30">
+                                        <div class="shop-w">
+                                            <div class="shop-w__intro-wrap">
+                                                <h1 class="shop-w__h">CATEGORIES</h1>
+
+                                                <span
+                                                    class="fas fa-minus shop-w__toggle"
+                                                    data-target="#s-category"
+                                                    data-toggle="collapse"></span>
+                                            </div>
+                                            <div class="shop-w__wrap collapse show" id="s-category">
+                                                <ul class="shop-w__category-list gl-scroll">
+                                                    <li class="has-list">
+
+                                                        <a href="#">Catégories</a>
+
+                                                        <span class="category-list__text u-s-m-l-6">(nb)</span>
+
+                                                        <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                                                        <ul style="display:block">
+                                                            
+                                                            
+                                                            {# listes des catégories affichage twig controller  #}
+
+                                                            {% for category in categories %}
+                                                            <li class="has-list">
+
+                                                                <a href="{{ path('category_show', { slug: category.slug}) }}">{{ category.name }}</a>
+
+                                                               
+
+                                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                                 
+                                                                <ul>
+                                                                    <li>
+
+                                                                        <a href="#">Projet</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="#">Projet</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="#">Projet</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="#">Projet</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+
+                                                            {% endfor %}
+
+                                                            {# fin de la liste des catégories #}
+                                                           
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>

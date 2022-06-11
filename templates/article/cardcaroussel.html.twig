@@ -41,11 +41,13 @@
                 </ul>
             </div>
         </div>
-
+        
         <span class="product-o__category">
 
-            <a href="shop-side-version-2.html">{# {{ category.name }} #}</a>
+            <a href="{# {{ path('category_show', { slug: category.slug}) }} #}">{# {{ categorie.name }} #}Catégorie</a>
         </span>
+
+     
 
         <span class="product-o__name">
             <a class="text-decoration-none" href="{{ article_show }}">{{ article.title }}</a>

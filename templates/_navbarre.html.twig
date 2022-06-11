@@ -70,6 +70,33 @@
 
                 </li>
 
+                <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle ongletnav " 
+                        href="#"
+                        id="navbarDropdownProfil"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Catégorie 
+                        </a>
+
+                     <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownProfil">
+                        
+                      {#   {% for category in categories %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('category_show', { slug: category.slug}) }}">{{ category.name }}</a>
+                        </li>
+
+                        {% endfor %} #}
+                       
+
+                    </ul>
+
+                    
+                </li>
+
 
                 <li class="nav-item mx-2">
                     <a class="ongletnav" href="#">A propos de moi</a>
@@ -86,7 +113,7 @@
 
                 <li class="nav-item dropdown">
                     <a
-                        class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 mashco-children-no-margin text-black"
+                        class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black"
                         href=""
                         id="navbarDropdownProfil"
                         role="button"

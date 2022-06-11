@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="extra-space-l"></div>
-    <div class="container vh-100">
+    <div class="container">
         <h2 class="mont text-center">{{ article.title }}</h2>
         <img
                 class="aspect__img text-center"
@@ -15,5 +15,22 @@
         <hr>
 
         <h5 class="text-center">{{ article.content|raw }}</h5>
+
+        <h2 class="comment-title mt-5">
+            <span class="comment-count">{{ article.comments|length }}</span> commentaire(s)
+        </h2>
+
+        <hr>
+
+        <div class="comment-area mb-5">
+                {{ form(commentForm, { 'attr': { 'class': 'comment-form' } }) }}
+        </div>
+
+        <div class="comment-list inline-block">
+            {% for comment in article.comments %}
+                {% include 'comment/index.html.twig' with [comment] %}
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock %}
