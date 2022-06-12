@@ -1,10 +1,11 @@
 .searchnav {
     cursor: default;
+    padding: 0px 0px !important;
   
     // Main Search
   
-    padding: 0 480px 0 80px;//right 36 , left 18
-    width: 70%;
+    /* padding: 0 480px 0 80px; *///right 36 , left 18
+   
   
   
   
@@ -14,7 +15,7 @@
   .main-search-button {
     position: absolute;
     top: 50%;
-    right: 480px;
+    right: 0%;
     transform: translateY(-50%);
     font-size: 18px;
   }

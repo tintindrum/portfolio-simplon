@@ -20,7 +20,7 @@ class CategoryController extends AbstractController
     
     
     
-    #[Route('/categorie/{slug}', name: 'category_show')]
+    #[Route('/category/{slug}', name: 'category_show')]
     public function show(?Category $category): Response
     {
 

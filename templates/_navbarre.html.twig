@@ -1,3 +1,7 @@
+{% set menus = menu_services.findAll %}
+
+
+
 <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-charte-terre">
 
     <div class="container-fluid">
@@ -32,7 +36,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1 gap-3">
-
+{# 
                 <li class="nav-item flex-grow-1 mx-2">
                     <form class="d-flex">
                         <div class="input-group mx-2 searchnav">
@@ -43,7 +47,7 @@
                                     placeholder="Qu'est ce qui vous ferait plaisir ?"
                                     aria-label="Search"
                                     id="search">
-                                    <label for="search" class="text-muted">{# {{ reglages_service.get('invite de recherche') }} #}Vous recherchez quoi ?</label>
+                                    <label for="search" class="text-muted">{{ reglages_service.get('invite de recherche') }}Vous recherchez quoi ?</label>
                                 </input>
                             </div>
                             <button class="main-search-button btn text-black" type="submit">
@@ -58,17 +62,13 @@
                             </button>
                         </div>
                     </form>
-                </li>
+                </li> #}
+{# 
+                
 
-                <li class="nav-item mx-2">
-                    <a class="ongletnav" href="{{ path('app_main') }}">Accueil</a>
+                
 
-                </li>
-
-                <li class="nav-item mx-2">
-                    <a class="ongletnav" href="{{ path('app_articles') }}">Projets</a>
-
-                </li>
+                
 
                 <li class="nav-item dropdown mx-2">
                     <a class="nav-link dropdown-toggle ongletnav " 
@@ -84,28 +84,70 @@
                         class="dropdown-menu dropdown-menu-end"
                         aria-labelledby="navbarDropdownProfil">
                         
-                      {#   {% for category in categories %}
+                      {% for category in categories %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('category_show', { slug: category.slug}) }}">{{ category.name }}</a>
                         </li>
 
-                        {% endfor %} #}
+                        {% endfor %}  
                        
 
-                    </ul>
+                    </ul> 
 
                     
-                </li>
+                </li> 
 
 
-                <li class="nav-item mx-2">
-                    <a class="ongletnav" href="#">A propos de moi</a>
-                </li>
 
                 <li class="nav-item mx-2">
-                    <a class="ongletnav" href="#">Contactez-moi</a>
+                    <a class="ongletnav" href="{{ path('app_contact') }}">Contactez-moi</a>
+                </li> #}
+
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="{{ path('app_main') }}">Accueil</a>
+
                 </li>
 
+                <li class="nav-item mx-2">
+                    <a class="ongletnav" href="{{ path('app_articles') }}">Projets</a>
+
+                </li>
+
+                {%for menu in menus %}
+                    {% if menu.subMenus.count > 0 %}
+                    <li class="nav-item dropdown mx-2">
+                                <a class="nav-link dropdown-toggle ongletnav " 
+                                    href="{{ menu|menuLink }}"
+                                    id="navbarDropdownProfil"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    {{ menu.name }} 
+                                </a>
+
+                                <ul
+                                    class="dropdown-menu dropdown-menu-end"
+                                    aria-labelledby="navbarDropdownProfil">
+                                    
+                                {% for subMenu in subMenus %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ subMenu|menuLink }}">{{ subMenu.name }}</a>
+                                    </li>
+
+                                {% endfor %}  
+                                
+
+                                </ul>  
+                    </li> 
+                    {% else %}
+
+                    <li class="nav-item mx-2">
+                    <a class="ongletnav" href="{{ menu|menuLink }}">{{ menu.name }}</a>
+                </li>
+
+
+                    {% endif %}
+                {% endfor %}
 
                 
 
@@ -140,7 +182,15 @@
                         </li>
                         {#  {% if is_granted('ROLE_ADMIN') %} #}
                         <li class="nav-item">
-                            <a class="nav-link" href="{# {{ path('admin') }} #}">Créer Projet</a>
+                            <a class="nav-link" href="{{ ea_index('MenuCrudController') }}">Menus</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ ea_index('ArticleCrudController') }}">Projets</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ ea_index('CommentCrudController') }}">Commentaires</a>
                         </li>
                         {#  {% endif %} #}
 
