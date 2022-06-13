@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="extra-space-l"></div>
+
+<section>
+        <div class="container w-25">
+
+            <div class="row justify-content-center">
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1 class="my-2">Inscription</h1>
+                            <p class="text-h3"></p>
+                        </div>
+                        <p class="text-center">Déjà inscrit ? Vous pouvez
+                        <a href="{{ path('app_login') }}">Vous connecter</a>
+                        </p>
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col">
+                             {{ form_start(registrationForm, {attr: {class: 'quentin-round'}}) }}
+                        
+                        {{ form_row(registrationForm.username) }}
+
+                        {{ form_row(registrationForm.plainPassword) }} 
+
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-start mt-4">
+                        <div class="col">
+                            {# <div class="form-check">
+                                 {{ form_row(registrationForm.agreeTerms, {
+                        label: 'Accepter les CGU'
+                        }) }} 
+                            </div> #}
+                        
+
+                            <div class="form-check">
+                                <button type="submit" class="btn btn-primary d-block my-2">S'inscrire</button>
+                                 {{ form_end(registrationForm) }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="extra-space-l"></div>
+
+
+{% endblock %}

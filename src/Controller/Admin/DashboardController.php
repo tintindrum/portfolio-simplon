@@ -48,20 +48,37 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToRoute('Retour sur le site', 'fa fa-arrow-left', 'app_main');
-        
-        yield MenuItem::subMenu('Projets', 'fas fa-newspaper')->setSubItems([
-            MenuItem::linkToCrud('Tous les Projets', 'fas fa-newspaper', Article::class),
-            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class)
-        ]);
+    
+        if($this->isGranted('ROLE_ADMIN')) {
+            yield MenuItem::subMenu('Menus', 'fas fa-list')->setSubItems([
+                MenuItem::linkToCrud('Pages', 'fas fa-file', Menu::class),
+                MenuItem::linkToCrud('Projets', 'fas fa-newspaper', Menu::class),
+                MenuItem::linkToCrud('Lien personnalisés', 'fas fa-link', Menu::class),
+                MenuItem::linkToCrud('Catégories', 'fab fa-delicious', Menu::class),
+            ]);
+        }
 
-        yield MenuItem::subMenu('Menus', 'fas fa-list')->setSubItems([
-            MenuItem::linkToCrud('Pages', 'fas fa-file', Menu::class),
-            MenuItem::linkToCrud('Projets', 'fas fa-newspaper', Menu::class),
-            MenuItem::linkToCrud('Lien personnalisés', 'fas fa-link', Menu::class),
-            MenuItem::linkToCrud('Catégories', 'fab fa-delicious', Menu::class),
-        ]);
+        if ($this->isGranted('ROLE_ADMIN')) {
+            yield MenuItem::subMenu('Projets', 'fas fa-newspaper')->setSubItems([
+                MenuItem::linkToCrud('Tous les Projets', 'fas fa-newspaper', Article::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
+                MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class)
+            ]);
+        }
+
+        if($this->isGranted('ROLE_ADMIN')) {
+            
+            yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comment::class);
+            yield MenuItem::subMenu('Comptes', 'fas fa-user')->setSubItems([
+                MenuItem::linkToCrud('Tous les comptes', 'fas fa-user-friends', Menu::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Menu::class),
+            ]);
+
+        }
+
+        
  
-        yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comment::class);
+
+        
     }
 }

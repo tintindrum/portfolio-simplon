@@ -22,9 +22,15 @@
 
         <hr>
 
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        
+
         <div class="comment-area mb-5">
                 {{ form(commentForm, { 'attr': { 'class': 'comment-form' } }) }}
         </div>
+        
+        {% endif %}
+
 
         <div class="comment-list inline-block">
             {% for comment in article.comments %}
