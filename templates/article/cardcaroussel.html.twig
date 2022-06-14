@@ -10,8 +10,8 @@
             {% if article.featuredImage %}
                 <a href="{{ article_show }}">
                     <img
-                        src="/upload/{{ article.featuredImage.filename }}"
-                        alt="{{ article.featuredImage.filename.altText }}"
+                        src="/uploads/{{ article.featuredImage.filename }}"
+                        alt="{# {{ article.featuredImage.filename.altText }} #}"
                         loading="lazy"
                         width="350"
                         height="250">
@@ -20,11 +20,7 @@
 
             {% endif %}
 
-            <img
-                class="aspect__img"
-                src="{{ asset('img/fournitureheader.jpg') }}"
-                width="355px"
-                alt="">
+          
 
             <div class="product-o__action-wrap">
                 <ul class="product-o__action-list">

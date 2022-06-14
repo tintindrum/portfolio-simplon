@@ -3,16 +3,18 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Menu;
+use App\Entity\User;
+use App\Entity\Media;
 use App\Entity\Article;
 use App\Entity\Comment;
 use App\Entity\Category;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-
-
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -58,11 +60,16 @@ class DashboardController extends AbstractDashboardController
             ]);
         }
 
-        if ($this->isGranted('ROLE_ADMIN')) {
+        if ($this->isGranted('ROLE_AUTHOR')) {
             yield MenuItem::subMenu('Projets', 'fas fa-newspaper')->setSubItems([
                 MenuItem::linkToCrud('Tous les Projets', 'fas fa-newspaper', Article::class),
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
                 MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class)
+            ]);
+
+            yield MenuItem::subMenu('Médias', 'fas fa-photo-video')->setSubItems([
+                MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Media::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Media::class)->setAction(Crud::PAGE_NEW),
             ]);
         }
 
@@ -70,8 +77,8 @@ class DashboardController extends AbstractDashboardController
             
             yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comment::class);
             yield MenuItem::subMenu('Comptes', 'fas fa-user')->setSubItems([
-                MenuItem::linkToCrud('Tous les comptes', 'fas fa-user-friends', Menu::class),
-                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Menu::class),
+                MenuItem::linkToCrud('Tous les comptes', 'fas fa-user-friends', User::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW)
             ]);
 
         }

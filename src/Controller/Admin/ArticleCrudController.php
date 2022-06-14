@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\Media;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
@@ -30,6 +31,8 @@ class ArticleCrudController extends AbstractCrudController
         yield TextField::new('featuredText');
 
         yield AssociationField::new('categories');
+
+        yield AssociationField::new('featuredImage');
 
         yield DateTimeField::new('createdAt')
         ->hideOnForm();
