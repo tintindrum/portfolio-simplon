@@ -4,18 +4,19 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Service\PdfService;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserController extends AbstractController
 {
     
-
     #[Route(path: '/user/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
@@ -64,7 +65,7 @@ class UserController extends AbstractController
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
-
+    
     #[Route(path: '/user/{username}', name: 'app_profil')]
     public function show(?User $user): Response
     {
@@ -76,6 +77,26 @@ class UserController extends AbstractController
             'user' => $user
         ]);
     }  
+
+    #[Route(path: '/user/data/{username}', name: 'user.pdf')]
+    public function generatePdfUser(User $user = null, PdfService $pdf)
+    {
+       
+        $html = $this->render('user/data.html.twig', [
+            'user' => $user
+        ]);
+
+        $pdf->showPdfFile($html);
+    }
+
+  
+
+  
+
+
+   
+
+    
 
    
 }

@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GoogleMapApiController!{% endblock %}
+
+{% block body %}
+
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  </head>
+
+  <style>
+  #mapgoogle {
+    
+    height: 600px;
+        /* The height is 400 pixels */
+    width: 50%;
+        /* The width is the width of the web page */
+
+    margin: 40px 40px !important;
+      
+}
+  </style>
+  <body>
+    <h3 class="text-center py-5">Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="mapgoogle"></div>
+
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6wRxFe1g-wPoHtAal8LNpJ_tEJeDaBB8&callback=initMap&v=weekly"
+      defer
+    ></script>
+
+    <script>
+        /* debut script js pour google maps */
+
+function initMap() {
+    // The location of Uluru
+    const europe = { lat: 51.00000, lng: 10.00000 };
+
+    const amsterdam = { lat: 52.37276 , lng: 4.89360  };
+
+    const paris = { lat: 48.85670, lng: 2.35146 };
+
+    const bruxelles = { lat: 50.84656, lng: 4.35170 };
+
+    const rome = { lat: 41.89332, lng: 12.48293 };
+
+    const madrid = { lat: 40.41670, lng: -3.70358 };
+
+
+    // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("mapgoogle"), {
+      zoom: 4,
+      center: europe,
+    });
+
+    // The marker, positioned at Uluru
+    new google.maps.Marker({
+      position: europe,
+      map: map,
+    });
+   
+    new google.maps.Marker({
+      position: amsterdam,
+      map: map,
+    });
+
+    new google.maps.Marker({
+      position: paris,
+      map: map,
+    });
+      
+    new google.maps.Marker({
+      position: bruxelles,
+      map: map,
+    });
+
+    new google.maps.Marker({
+      position: rome,
+      map: map,
+    });
+
+    new google.maps.Marker({
+      position: madrid,
+      map: map,
+    });
+
+  }
+  
+  window.initMap = initMap;
+    </script>
+  </body>
+</html>
+
+{% endblock %}
+
+

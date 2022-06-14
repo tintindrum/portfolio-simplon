@@ -26,6 +26,7 @@
         "isotope-layout": "^3.0.6",
         "jquery": "^3.6.0",
         "jquery.countdown": "^1.2.8",
+        "leaflet": "^1.8.0",
         "owl.carousel": "^2.3.4",
         "slick-carousel": "^1.8.1"
     }

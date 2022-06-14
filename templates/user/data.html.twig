@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Données personnelles de {{ user.username|capitalize }}{% endblock %}
 
 {% block body %}
 
 <div class="extra-space-l"></div>
 
-<div class="container w-25 card">
+<div class="container w-25">
     <div class="row">
-     
-            <h2>Profil de {{ user.username|capitalize }}</h2>
+           <h2>Profil de {{ user.username|capitalize }}</h2>
             
             <div class="col-12">
                 <label for="username" class="form-label">Nom d'utilisateur</label>
@@ -46,13 +45,7 @@
                 <p>Nombre de commentaires posté : {{ user.comments|length }} </p>
             </div> #}
 
-            
-
-       
     </div>
-
-    <a href="{{ path('user.pdf', { username: app.user.username }) }}" class"text-center">Télécharger les données en PDF</a>
-    
 </div>
 
 <div class="extra-space-xxl"></div>

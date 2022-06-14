@@ -55,18 +55,121 @@
                     <li class="lvl-1">
                         <h2>Ajax + Format PDF & Api</h2>
                         <ul class="lvl-2">
+                            
                             <li>
-                                <a href="{{ path('app_main') }}">Accueil Partie Ajax & PDF</a>
+                                <a href="{{ path('app_google_map_action') }}">Accueil Partie API google maps</a>
                             </li>
 
                             <li>
-                                <a href="{{ path('app_main') }}">Accueil Partie API google maps</a>
+                                <a href="{{ path('app_google_map_api') }}">Accueil Partie Library Leaflet Js Map</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('app_login') }}">Convertion données en PDF (de l'utilisateur une fois connecter)</a>
                             </li>
                         </ul>
                     </li>
 
+                    
+
                 </ul>
             </li>
+
+             {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black"
+                        href=""
+                        id="navbarDropdownProfil"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa fa-cog logoadmin">
+                        </i>
+                            
+
+                        Admin
+                    </a>
+
+                    <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownProfil">
+                        {#    {% if app.user %} #}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('admin') }}">Tableau de bord</a>
+                        </li>
+                        {#  {% if is_granted('ROLE_ADMIN') %} #}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ ea_index('MenuCrudController') }}">Menus</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ ea_index('ArticleCrudController') }}">Projets</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ ea_index('CommentCrudController') }}">Commentaires</a>
+                        </li>
+                        {#  {% endif %} #}
+
+                    </ul>
+                </li>
+                {% endif %}
+
+         
+
+
+                {# debut du menu connexion inscription si l'utilisateur n'est pas connecter #}
+                
+                
+
+                <li class="nav-item dropdown">
+                        <a
+                        class="nav-link dropdown-toggle d-flex flex-column align-items-center small gap-1 quentin-children-no-margin text-black"
+                        {# href={{ path('app_profil') }}" #}
+                        id="navbarDropdownProfil"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle">
+                            <use xlink:href="#svg-person-circle"></use>
+                        </svg>
+
+                        Profil
+                        </a>
+
+                    <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownProfil">
+                        
+                        {% if not is_granted('IS_AUTHENTICATED_FULLY')%}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+                        </li>
+                       
+
+                    </ul>
+                </li>
+                {% else %}
+                    
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_profil', { username: app.user.username }) }}">Profil</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Se deconnecter</a>
+                        </li>
+
+                        
+                    </ul>
+                </li>
+
+                {% endif %}{# fin du menu connexion & inscription #}
 
           {#   <li class="lvl-0">
                 <a class="titresousnav" href="#">A propos de moi</a>
@@ -125,15 +228,13 @@ class="container d-flex align-items-center justify-content-center position-relat
 </div>
 
 <div class="cardlanding d-flex position-relative flex-column">
-    <a href="{# {{ path('app_main') }} #}">
+    <a href="{{ path('app_google_map_action') }}">
         <div class='imgContainer'>
             <img src='{{asset('img/ajaxlogo.jpg')}}'>
         </div>
         <div class="content">
             <h3>Ajax & API</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget
-                velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis
-                urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+            <p>Examen Simplon : exercice Ajax (voir partie Back-end espace commentaire), Conversion en PDF des données et utilisation de Google Maps Api ainsi qu'une library Leaflet JS.</p>
         </div>
     </div>
 </a>

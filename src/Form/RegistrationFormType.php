@@ -20,6 +20,12 @@ class RegistrationFormType extends AbstractType
             ->add('username', TextType::class, [
                 'label' => "Nom d'utilisateur"
             ])
+            ->add('firstName', TextType::class, [
+                'label' => "Prénom"
+            ])
+            ->add('name', TextType::class, [
+                'label' => "Nom"
+            ])
           /*   ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -42,8 +48,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

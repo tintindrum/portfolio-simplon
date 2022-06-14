@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ArticleController extends AbstractController
 {
     
-    #[Route('/articles', name: 'app_articles')]
+    #[Route('/projets', name: 'app_articles')]
     public function index(ArticleRepository $ArticleRepository, CategoryRepository $categoryRepository): Response
     {
         return $this->render('article/index.html.twig', [
@@ -24,7 +24,7 @@ class ArticleController extends AbstractController
         ]);
     }
     
-    #[Route('/article/{slug}', name: 'article_show')]
+    #[Route('/projet/{slug}', name: 'article_show')]
     public function show(?Article $article, ?Category $categoriea): Response
     {
         if (!$article) {
