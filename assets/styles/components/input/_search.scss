@@ -1,0 +1,36 @@
+.searchnav {
+    cursor: default;
+    padding: 0px 0px !important;
+  
+    // Main Search
+  
+    /* padding: 0 480px 0 80px; *///right 36 , left 18
+   
+  
+  
+  
+  
+  
+  
+  .main-search-button {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+  
+    
+  .form-floating .form-control{
+      height:45px; 
+      border-radius: 0.5em !important; 
+  
+  }
+  
+  .form-floating .form-control:focus{
+      box-shadow:none;
+      border:1px solid rgb(163, 161, 161);
+  }
+  
+  
+  }

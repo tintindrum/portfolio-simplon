@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<div class="extra-space-l"></div>
+
+<div class="container w-25 card">
+    <div class="row">
+     
+            <h2>Profil de {{ user.username|capitalize }}</h2>
+            
+            <div class="col-12">
+                <label for="username" class="form-label">Nom d'utilisateur</label>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" value="{{ user.username }}" readonly>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label">Email :</label>
+                <h5>{# {{ user.email }} #}</h5>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label">Prénom :</label>
+                <h5>{{ user.firstName }}</h5>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label">Nom :</label>
+                <h5>{{ user.name }}</h5>
+            </div>
+
+           {#  <div class="col-12">
+                <label for="username" class="form-label">Rôle :</label>
+                <h5>{{ user.roles }}</h5>
+            </div> #}
+
+            {# <div class="mb-3">
+                <p>Nombre de commentaires posté : {{ user.comments|length }} </p>
+            </div> #}
+
+            
+
+       
+    </div>
+
+    <a href="{{ path('user.pdf', { username: app.user.username }) }}" class"text-center">Télécharger les données en PDF</a>
+    
+</div>
+
+<div class="extra-space-xxl"></div>
+
+
+{% endblock %}

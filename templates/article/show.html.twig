@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+
+<div class="extra-space-l"></div>
+    <div class="container">
+        <h2 class="mont text-center text-decoration-underline">{{ article.title }}</h2>
+        <div class="d-flex justify-content-center">
+        <img
+                class="d-flex justify-content-center my-5"
+                src="/uploads/{{ article.featuredImage.filename }}"
+                alt="{{ article.featuredImage.altText }}"
+                width="1080px"
+                alt="">
+            </div>
+        <hr>
+
+        <h4 class="text-center">Description : <p>{{ article.content|raw }}</p></h4>
+
+        <div class="extra-space-l"></div>
+
+        <h6 class="text-center">Lien du Projet :<a href="{{ article.featuredText }}" target="_blank"><pv class="my-2"> {{ article.featuredText }}</pv></a></h6>
+
+        <div class="extra-space-l"></div>
+        <hr>
+
+
+        <h2 class="comment-title mt-5 w-25 my-3">
+            <span class="comment-count">{{ article.comments|length }}</span> commentaire(s)
+        </h2>
+
+        
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        
+
+        <div class="comment-area mb-5 w-25">
+                {{ form(commentForm, { 'attr': { 'class': 'comment-form' } }) }}
+        </div>
+        
+        {% endif %}
+
+
+        <div class="comment-list inline-block w-25">
+            {% for comment in article.comments %}
+                {% include 'comment/index.html.twig' with [comment] %}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

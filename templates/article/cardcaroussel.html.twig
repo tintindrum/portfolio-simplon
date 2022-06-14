@@ -1,0 +1,59 @@
+{% set article_show = path('article_show', {'slug': article.slug}) %}
+
+
+
+{# card caroussel projets  #}
+<div class="u-s-m-b-30">
+    <div class="product-o product-o--hover-on">
+        <div class="product-o__wrap">
+
+            {% if article.featuredImage %}
+                <a href="{{ article_show }}">
+                    <img
+                        src="/uploads/{{ article.featuredImage.filename }}"
+                        alt="{# {{ article.featuredImage.filename.altText }} #}"
+                        loading="lazy"
+                        width="350"
+                        height="250">
+                    
+                </a>
+
+            {% endif %}
+
+          
+
+            <div class="product-o__action-wrap">
+                <ul class="product-o__action-list">
+
+                    <li>
+
+                        <a
+                            href="{{ article_show }}"
+                            title="Voir le projet">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <span class="product-o__category">
+
+            <a href="{# {{ path('category_show', { slug: category.slug}) }} #}">{# {{ categorie.name }} #}Catégorie</a>
+        </span>
+
+     
+
+        <span class="product-o__name">
+            <a class="text-decoration-none" href="{{ article_show }}">{{ article.title }}</a>
+        </span>
+
+        <p>
+            {{ article.createdAt|date('d M Y')}}
+        </p>
+
+    </div>
+</div>
+
+{# end fin card card caroussel #}

@@ -1,0 +1,49 @@
+@import "../fonts/Montserrat/fonts/webfonts/Montserrat.css";
+@import "../fonts/vj-type/canopee/canopee";
+@import "../fonts/vj-type/dahlia/dahlia";
+@import "../fonts/vj-type/kobe/kobe";
+@import "../fonts/CrimsonPro/static/CrimsonPro";
+@import "../fonts/ShadowsIntoLightTwo/shadows-into-light-two";
+
+@import 'owl.carousel/dist/assets/owl.carousel.css'; 
+
+
+
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1620px
+);
+
+
+@import "~bootstrap/scss/bootstrap";
+
+@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/regular.css';
+@import '~@fortawesome/fontawesome-free/css/solid.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
+
+
+/* base */
+
+@import
+  'base/base',
+  'base/responsive',
+  'base/utilities';
+
+
+  
+/* all pages scss */
+@import "pages/all";
+
+
+/* layout section */
+@import "layout/footer";
+@import "layout/navbarre";
+@import "layout/sousnav";
+
+// Components
+@import 'components/all';
