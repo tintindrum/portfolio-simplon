@@ -5,8 +5,8 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
-        "ext-ctype": "*",
-        "ext-iconv": "*",
+       /*  "ext-ctype": "*",
+        "ext-iconv": "*", */
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
